@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feira de Profissões - Tecnologia da Informação</title>
+    <style>
+        /* Estilos Globais e Cores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #111827;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #1f2937;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: #9ca3af;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* Seção Hero (Principal) */
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 100%);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #38bdf8;
+            color: #0b0f19;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0ea5e9;
+        }
+
+        /* Seção de Carreiras e Graduações */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .subsection-title {
+            color: #38bdf8;
+            font-size: 1.5rem;
+            margin: 30px 0 20px 0;
+            border-bottom: 1px solid #1f2937;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 15px;
+            color: #38bdf8;
+            font-size: 1.4rem;
+        }
+
+        .card-content p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .tags {
+            font-size: 0.85rem;
+            color: #818cf8;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Seção do Quiz */
+        .quiz-box {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quiz-question {
+            margin-bottom: 25px;
+        }
+
+        .quiz-question h4 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .quiz-options label {
+            display: block;
+            background: #1f2937;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: #d1d5db;
+        }
+
+        .quiz-options label:hover {
+            background: #374151;
+        }
+
+        .quiz-options input {
+            margin-right: 10px;
+        }
+
+        #quiz-result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #38bdf8;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #111827;
+            color: #6b7280;
+            border-top: 1px solid #1f2937;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+   
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Feira de profissões: T.I 2026</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#carreiras">Carreiras</a>
+            <a href="#graduacoes">Graduações</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section class="hero" id="inicio">
+        <h2>Conectando o Hoje com o Amanhã: O Mundo da T.I.</h2>
+        <p>Já imaginou criar sistemas, resolver problemas complexos com lógica ou projetar o hardware e a robótica do futuro? Venha descobrir as profissões que moldam a nossa realidade.</p>
+        <a href="#carreiras" class="btn">Explorar Carreiras</a>
+    </section>
+
+    <!-- Seção de Carreiras -->
+    <div class="container" id="carreiras">
+        <h2 class="section-title">Carreiras em Destaque</h2>
+        <div class="grid">
+            
+            <!-- Card Ciência da Computação -->
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <img src="image-1024-2272026df5043d865737bb16f6385bfb-removebg-preview.png" style="width: 300px; height: auto">
+                </div>
+                <div class="card-content">
+                    <h3>💻 Ciência da Computação</h3>
+                    <p><strong>O que faz:</strong> Estuda os fundamentos teóricos e práticos do processamento de dados, criação de algoritmos complexos, arquitetura de software e inteligência artificial. Transforma lógica matemática em softwares e soluções digitais.</p>
+                    <p><strong>Papel no mercado:</strong> Desenvolve novos softwares, motores de busca, sistemas de IA, modelos de aprendizado de máquina e arquiteturas base para grandes empresas de tecnologia.</p>
+                    <p><strong>Tempo de formação:</strong> 4 a 5 anos (Bacharelado).</p>
+                    <p><strong>Média Salarial:</strong> R$ 4.500 (Júnior) a R$ 20.000+ (Sênior/Arquiteto de Software).</p>
+                    <p class="tags">Foco: Algoritmos | Inteligência Artificial | Estruturas de Dados | Desenvolvimento de Software</p>
+                </div>
+            </div>
+
+            <!-- Card Engenharia da Computação -->
+            <div class="card">
+                <div class="card-img-placeholder">
+                    <img scr="images">
+                </div>
+                <div class="card-content">
+                    <h3>⚙️ Engenharia da Computação</h3>
+                    <p><strong>O que faz:</strong> Une os conceitos de engenharia eletrônica com a ciência da computação. O engenheiro projeta a parte física (hardware), como processadores, microcontroladores e circuitos impressos, além de criar o software embarcado que faz esses componentes funcionarem.</p>
+                    <p><strong>Papel no mercado:</strong> Desenvolve soluções para a indústria automotiva, robótica, dispositivos médicos e equipamentos para a Internet das Coisas (IoT).</p>
+                    <p><strong>Tempo de formação:</strong> 5 anos (Bacharelado em Engenharia).</p>
+                    <p><strong>Média Salarial:</strong> R$ 5.000 (Júnior) a R$ 25.000+ (Sênior/Líder de Projetos).</p>
+                    <p class="tags">Foco: Placas de Circuitos | Sistemas Embarcados | Hardware | IoT & Robótica</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Seção de Graduações em Tecnologia -->
+    <div class="container" id="graduacoes">
+        <h2 class="section-title">Guia de Graduações em Tecnologia</h2>
+
+        <h3 class="subsection-title">🎓 Bacharelados (Formação Teórica & Ampla)</h3>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Ciência da Computação</h3>
+                    <p>Focado nos fundamentos matemáticos e teóricos da computação. O aluno aprende a criar algoritmos complexos, desenvolver linguagens de programação, sistemas operacionais e inteligência artificial.</p>
+                    <p class="tags">Duração: 4 a 5 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Sistemas de Informação</h3>
+                    <p>Une a tecnologia com a gestão de negócios. Prepara o profissional para planejar, implementar e gerenciar os sistemas e dados que atendem às necessidades de uma empresa.</p>
+                    <p class="tags">Duração: 4 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Engenharia da Computação</h3>
+                    <p>Integra a ciência da computação com a engenharia eletrônica. Forma profissionais capacitados a projetar circuitos, placas, peças de hardware, robótica e sistemas embarcados.</p>
+                    <p class="tags">Duração: 5 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Engenharia Mecatrônica</h3>
+                    <p>Combina engenharia mecânica, eletrônica, computação e controle para projetar sistemas automatizados, braços robóticos e processos industriais inteligentes.</p>
+                    <p class="tags">Duração: 5 anos</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">⚡ Tecnólogos (Formação Prática & Rápida)</h3>
+        <div class="grid">
+            <div class="card">
+                <div class="card-content">
+                    <h3>Análise e Desenvolvimento de Sistemas (ADS)</h3>
+                    <p>Um dos cursos mais populares. Ensina a projetar, documentar, programar e testar softwares, aplicativos e websites voltados para o mercado imediato.</p>
+                    <p class="tags">Duração: 2 a 2,5 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Automação Industrial</h3>
+                    <p>Focado na implementação, programação e manutenção de sistemas automatizados, sensores e robôs em linhas de produção de fábricas e indústrias.</p>
+                    <p class="tags">Duração: 2 a 2,5 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Defesa Cibernética / Segurança da Informação</h3>
+                    <p>Prepara o estudante para proteger sistemas, servidores e dados contra invasões e ataques cibernéticos, aplicando criptografia, auditorias e testes de segurança.</p>
+                    <p class="tags">Duração: 2 a 2,5 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Banco de Dados / Ciência de Dados</h3>
+                    <p>Voltado para a organização, estruturação e análise de grandes volumes de informações (Big Data) para apoiar tomadas de decisão inteligentes.</p>
+                    <p class="tags">Duração: 2 a 2,5 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Jogos Digitais</h3>
+                    <p>Ensina a criar, modelar e programar jogos virtuais para diversas plataformas (consoles, computadores e celulares), unindo design, roteiro e código.</p>
+                    <p class="tags">Duração: 2 a 3 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Gestão da TI (GTI)</h3>
+                    <p>Focado no gerenciamento de equipes de TI, governança corporativa, infraestrutura, compra de insumos e alinhamento do setor tecnológico às metas da empresa.</p>
+                    <p class="tags">Duração: 2 anos</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>Sistemas para Internet / Dev Web</h3>
+                    <p>Concentrado na criação de sites, plataformas e-commerce, sistemas na nuvem e aplicações que operam diretamente nos navegadores e dispositivos móveis.</p>
+                    <p class="tags">Duração: 2 a 2,5 anos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Quiz -->
+    <div class="container" id="quiz">
+        <h2 class="section-title">Teste Seus Conhecimentos (Quiz de 10 Perguntas)</h2>
+        <div class="quiz-box">
+            <form id="quiz-form">
+                
+                <div class="quiz-question">
+                    <h4>1. O que é um algoritmo em Ciência da Computação?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="a"> Uma peça física usada para resfriar motores elétricos.</label>
+                        <label><input type="radio" name="q1" value="b"> Uma sequência finita de instruções lógicas estruturadas para resolver um problema.</label>
+                        <label><input type="radio" name="q1" value="c"> Um tipo de cabo de transmissão de dados.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>2. O que faz um Engenheiro da Computação na prática?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="a"> Projeta hardware, microchips, placas de circuito impresso e cria softwares embarcados.</label>
+                        <label><input type="radio" name="q2" value="b"> Desenvolve apenas páginas visuais de vendas para redes sociais.</label>
+                        <label><input type="radio" name="q2" value="c"> Realiza a manutenção preventiva em redes elétricas prediais.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>3. Quais são as principais áreas integradas pela Engenharia Mecatrônica?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="a"> Mecânica, Eletrônica, Computação e Sistemas de Controle.</label>
+                        <label><input type="radio" name="q3" value="b"> Design Gráfico, Marketing, Recursos Humanos e Administração.</label>
+                        <label><input type="radio" name="q3" value="c"> Arquitetura, Engenharia Civil e Geologia.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>4. O que é um CLP (Controlador Lógico Programável), muito utilizado na Automação Industrial?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q4" value="a"> Um computador industrial especializado em controlar máquinas e processos automatizados.</label>
+                        <label><input type="radio" name="q4" value="b"> Um programa de edição de imagens 3D.</label>
+                        <label><input type="radio" name="q4" value="c"> Um tipo de bateria de alta duração para robôs domésticos.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>5. O que são "Sistemas Embarcados", fundamentais na Engenharia da Computação e Mecatrônica?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q5" value="a"> Sistemas instalados exclusivamente dentro de barcos e navios.</label>
+                        <label><input type="radio" name="q5" value="b"> Computadores dedicados com funções específicas integrados dentro de outros dispositivos (como carros, robôs ou eletrodomésticos).</label>
+                        <label><input type="radio" name="q5" value="c"> Softwares de gestão financeira para pequenas empresas.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>6. Qual é o papel dos Sensores e Atuadores em um sistema de Automação e Mecatrônica?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q6" value="a"> Os sensores captam dados do ambiente e os atuadores realizam ações físicas (como mover um motor).</label>
+                        <label><input type="radio" name="q6" value="b"> Os sensores fornecem energia elétrica e os atuadores armazenam os arquivos do sistema.</label>
+                        <label><input type="radio" name="q6" value="c"> Ambos servem apenas para medir a temperatura interna do computador.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>7. O que é o "Compilador" em linguagens de programação na Ciência da Computação?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q7" value="a"> Um programa que traduz o código escrito pelo programador em código de máquina legível pelo processador.</label>
+                        <label><input type="radio" name="q7" value="b"> Um dispositivo mecânico que junta fios elétricos em painéis industriais.</label>
+                        <label><input type="radio" name="q7" value="c"> Um robô usado para montar peças em esteiras de fábricas.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>8. O que caracteriza a "Internet das Coisas" (IoT) na Engenharia e Automação?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q8" value="a"> Conectar objetos físicos do dia a dia à internet para coletar dados e automatizar tarefas.</label>
+                        <label><input type="radio" name="q8" value="b"> Apenas a velocidade da internet banda larga via fibra óptica.</label>
+                        <label><input type="radio" name="q8" value="c"> O uso de cabos especiais para conectar computadores antigos.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>9. O que é a Inteligência Artificial (IA) no contexto da Ciência da Computação?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q9" value="a"> O desenvolvimento de algoritmos que permitem às máquinas aprender, analisar dados e tomar decisões de forma autônoma.</label>
+                        <label><input type="radio" name="q9" value="b"> A construção de monitores com resolução ultra alta para jogos.</label>
+                        <label><input type="radio" name="q9" value="c"> Um software para limpezas automáticas de discos rígidos.</label>
+                    </div>
+                </div>
+
+                <div class="quiz-question">
+                    <h4>10. Em sistemas de Automação e Mecatrônica, o que significa um "Sistema de Malha Fechada"?</h4>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q10" value="a"> Um sistema que utiliza feedback (realimentação) dos sensores para ajustar seu próprio funcionamento de forma contínua.</label>
+                        <label><input type="radio" name="q10" value="b"> Um circuito elétrico desligado que não recebe corrente elétrica.</label>
+                        <label><input type="radio" name="q10" value="c"> Um computador sem acesso à internet para evitar invasões.</label>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="button" class="btn" onclick="checkQuiz()">Enviar Respostas</button>
+                </div>
+
+                <div id="quiz-result"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Feira de Profissões da Escola — obrigado por visitar nosso estande!</p>
+    </footer>
+
+    <!-- Script de Funcionamento do Quiz -->
+    <script>
+        function checkQuiz() {
+            let score = 0;
+            const totalQuestions = 10;
+            const answers = {
+                q1: 'b', q2: 'a', q3: 'a', q4: 'a', q5: 'b',
+                q6: 'a', q7: 'a', q8: 'a', q9: 'a', q10: 'a'
+            };
+
+            let answeredAll = true;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!selected) {
+                    answeredAll = false;
+                    break;
+                }
+                if (selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+
+            if (!answeredAll) {
+                resultDiv.style.color = "#ef4444";
+                resultDiv.innerText = "Por favor, responda a todas as 10 perguntas antes de enviar!";
+                return;
+            }
+
+            if (score >= 9) {
+                resultDiv.style.color = "#34d399";
+                resultDiv.innerText = `🏆 Incrível! Você acertou ${score} de 10! Nível Especialista em Computação e Mecatrônica!`;
+            } else if (score >= 6) {
+                resultDiv.style.color = "#38bdf8";
+                resultDiv.innerText = `🎉 Parabéns! Você acertou ${score} de 10! Você tem um ótimo conhecimento na área.`;
+            } else {
+                resultDiv.style.color = "#f59e0b";
+                resultDiv.innerText = `👍 Você acertou ${score} de 10. Dê uma lida no conteúdo da página e tente novamente para melhorar sua nota!`;
+            }
+        }
+    </script>
+    
+</body>
+</html>
