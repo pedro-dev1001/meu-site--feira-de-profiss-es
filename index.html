@@ -123,17 +123,11 @@
             transform: translateY(-5px);
         }
 
-        .card-img-placeholder {
+        .card-img {
             width: 100%;
             height: 200px;
-            background: #1f2937;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b7280;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 10px;
+            object-fit: cover;
+            display: block;
         }
 
         .card-content {
@@ -233,7 +227,7 @@
     <!-- Seção Principal (Hero) -->
     <section class="hero" id="inicio">
         <h2>Conectando o Hoje com o Amanhã: O Mundo da T.I.</h2>
-        <p>Já imaginou criar sistemas, resolver problemas complexos com lógica ou projetar o hardware e a robótica do futuro? Venha descobrir as profissões que moldam a nossa realidade.</p>
+        <p>Já imaginou criar sistemas, resolver problemas complexos com lógica ou projetar o hardware do futuro? Venha descobrir as profissões que moldam a nossa realidade.</p>
         <a href="#carreiras" class="btn">Explorar Carreiras</a>
     </section>
 
@@ -244,9 +238,7 @@
             
             <!-- Card Ciência da Computação -->
             <div class="card">
-                <div class="card-img-placeholder">
-                    <img src="image-1024-2272026df5043d865737bb16f6385bfb-removebg-preview.png" style="width: 300px; height: auto">
-                </div>
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Ciência da Computação - Código na tela" class="card-img">
                 <div class="card-content">
                     <h3>💻 Ciência da Computação</h3>
                     <p><strong>O que faz:</strong> Estuda os fundamentos teóricos e práticos do processamento de dados, criação de algoritmos complexos, arquitetura de software e inteligência artificial. Transforma lógica matemática em softwares e soluções digitais.</p>
@@ -259,9 +251,7 @@
 
             <!-- Card Engenharia da Computação -->
             <div class="card">
-                <div class="card-img-placeholder">
-                    <img scr="1377877.png">
-                </div>
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop" alt="Engenharia da Computação - Placa de circuito impresso e microchips" class="card-img">
                 <div class="card-content">
                     <h3>⚙️ Engenharia da Computação</h3>
                     <p><strong>O que faz:</strong> Une os conceitos de engenharia eletrônica com a ciência da computação. O engenheiro projeta a parte física (hardware), como processadores, microcontroladores e circuitos impressos, além de criar o software embarcado que faz esses componentes funcionarem.</p>
@@ -307,9 +297,9 @@
 
             <div class="card">
                 <div class="card-content">
-                    <h3>Engenharia Mecatrônica</h3>
-                    <p>Combina engenharia mecânica, eletrônica, computação e controle para projetar sistemas automatizados, braços robóticos e processos industriais inteligentes.</p>
-                    <p class="tags">Duração: 5 anos</p>
+                    <h3>Engenharia de Software</h3>
+                    <p>Focado na criação de programas de grande porte, abordando desde a arquitetura do software até metodologias de teste, qualidade e gerenciamento de equipes de desenvolvimento.</p>
+                    <p class="tags">Duração: 4 a 5 anos</p>
                 </div>
             </div>
         </div>
@@ -326,9 +316,9 @@
 
             <div class="card">
                 <div class="card-content">
-                    <h3>Automação Industrial</h3>
-                    <p>Focado na implementação, programação e manutenção de sistemas automatizados, sensores e robôs em linhas de produção de fábricas e indústrias.</p>
-                    <p class="tags">Duração: 2 a 2,5 anos</p>
+                    <h3>Redes de Computadores</h3>
+                    <p>Focado no planejamento, instalação, configuração e manutenção de infraestruturas físicas e lógicas de redes locais, servidores e conexões de dados.</p>
+                    <p class="tags">Duração: 2,5 anos</p>
                 </div>
             </div>
 
@@ -381,92 +371,92 @@
             <form id="quiz-form">
                 
                 <div class="quiz-question">
-                    <h4>1. O que é um algoritmo em Ciência da Computação?</h4>
+                    <h4>1. O que é Hardware?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q1" value="a"> Uma peça física usada para resfriar motores elétricos.</label>
-                        <label><input type="radio" name="q1" value="b"> Uma sequência finita de instruções lógicas estruturadas para resolver um problema.</label>
-                        <label><input type="radio" name="q1" value="c"> Um tipo de cabo de transmissão de dados.</label>
+                        <label><input type="radio" name="q1" value="a"> A parte física do computador, como peças, placas e chips.</label>
+                        <label><input type="radio" name="q1" value="b"> Um aplicativo para baixar jogos no celular.</label>
+                        <label><input type="radio" name="q1" value="c"> Um tipo de vírus que desacelera a internet.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>2. O que faz um Engenheiro da Computação na prática?</h4>
+                    <h4>2. O que é Software?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q2" value="a"> Projeta hardware, microchips, placas de circuito impresso e cria softwares embarcados.</label>
-                        <label><input type="radio" name="q2" value="b"> Desenvolve apenas páginas visuais de vendas para redes sociais.</label>
-                        <label><input type="radio" name="q2" value="c"> Realiza a manutenção preventiva em redes elétricas prediais.</label>
+                        <label><input type="radio" name="q2" value="a"> A parte lógica do computador, composta por programas e sistemas.</label>
+                        <label><input type="radio" name="q2" value="b"> O cabo de energia usado para ligar o computador na tomada.</label>
+                        <label><input type="radio" name="q2" value="c"> O teclado e o mouse que usamos com as mãos.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>3. Quais são as principais áreas integradas pela Engenharia Mecatrônica?</h4>
+                    <h4>3. De forma bem simples, o que é um Algoritmo em Ciência da Computação?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q3" value="a"> Mecânica, Eletrônica, Computação e Sistemas de Controle.</label>
-                        <label><input type="radio" name="q3" value="b"> Design Gráfico, Marketing, Recursos Humanos e Administração.</label>
-                        <label><input type="radio" name="q3" value="c"> Arquitetura, Engenharia Civil e Geologia.</label>
+                        <label><input type="radio" name="q3" value="a"> Um passo a passo com regras para resolver um problema.</label>
+                        <label><input type="radio" name="q3" value="b"> Uma peça redonda que fica dentro do monitor.</label>
+                        <label><input type="radio" name="q3" value="c"> O botão de ligar o computador.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>4. O que é um CLP (Controlador Lógico Programável), muito utilizado na Automação Industrial?</h4>
+                    <h4>4. Qual é o principal foco da Engenharia da Computação?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q4" value="a"> Um computador industrial especializado em controlar máquinas e processos automatizados.</label>
-                        <label><input type="radio" name="q4" value="b"> Um programa de edição de imagens 3D.</label>
-                        <label><input type="radio" name="q4" value="c"> Um tipo de bateria de alta duração para robôs domésticos.</label>
+                        <label><input type="radio" name="q4" value="a"> Unir a criação de hardware (peças e circuitos) com o software que os faz funcionar.</label>
+                        <label><input type="radio" name="q4" value="b"> Criar apenas posts e artes para redes sociais.</label>
+                        <label><input type="radio" name="q4" value="c"> Consertar apenas impressoras antigas.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>5. O que são "Sistemas Embarcados", fundamentais na Engenharia da Computação e Mecatrônica?</h4>
+                    <h4>5. Qual é o principal foco da Ciência da Computação?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q5" value="a"> Sistemas instalados exclusivamente dentro de barcos e navios.</label>
-                        <label><input type="radio" name="q5" value="b"> Computadores dedicados com funções específicas integrados dentro de outros dispositivos (como carros, robôs ou eletrodomésticos).</label>
-                        <label><input type="radio" name="q5" value="c"> Softwares de gestão financeira para pequenas empresas.</label>
+                        <label><input type="radio" name="q5" value="a"> Criar sistemas de computador, algoritmos, linguagens e inteligência artificial.</label>
+                        <label><input type="radio" name="q5" value="b"> Fabricar cabos de internet e tomadas elétricas.</label>
+                        <label><input type="radio" name="q5" value="c"> Vender computadores em lojas de shopping.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>6. Qual é o papel dos Sensores e Atuadores em um sistema de Automação e Mecatrônica?</h4>
+                    <h4>6. O que é uma Linguagem de Programação?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q6" value="a"> Os sensores captam dados do ambiente e os atuadores realizam ações físicas (como mover um motor).</label>
-                        <label><input type="radio" name="q6" value="b"> Os sensores fornecem energia elétrica e os atuadores armazenam os arquivos do sistema.</label>
-                        <label><input type="radio" name="q6" value="c"> Ambos servem apenas para medir a temperatura interna do computador.</label>
+                        <label><input type="radio" name="q6" value="a"> Um conjunto de instruções e códigos usado pelo programador para dar ordens ao computador.</label>
+                        <label><input type="radio" name="q6" value="b"> O idioma falado pelos robôs em filmes de ficção científica.</label>
+                        <label><input type="radio" name="q6" value="c"> Um tipo de tecla especial do teclado.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>7. O que é o "Compilador" em linguagens de programação na Ciência da Computação?</h4>
+                    <h4>7. O que é o Processador (CPU) de um computador?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q7" value="a"> Um programa que traduz o código escrito pelo programador em código de máquina legível pelo processador.</label>
-                        <label><input type="radio" name="q7" value="b"> Um dispositivo mecânico que junta fios elétricos em painéis industriais.</label>
-                        <label><input type="radio" name="q7" value="c"> Um robô usado para montar peças em esteiras de fábricas.</label>
+                        <label><input type="radio" name="q7" value="a"> O "cérebro" do computador, responsável por fazer todos os cálculos e executar ordens.</label>
+                        <label><input type="radio" name="q7" value="b"> O alto-falante que sai o som do computador.</label>
+                        <label><input type="radio" name="q7" value="c"> O vidro da tela do monitor.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>8. O que caracteriza a "Internet das Coisas" (IoT) na Engenharia e Automação?</h4>
+                    <h4>8. Para que serve a Memória RAM em um computador?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q8" value="a"> Conectar objetos físicos do dia a dia à internet para coletar dados e automatizar tarefas.</label>
-                        <label><input type="radio" name="q8" value="b"> Apenas a velocidade da internet banda larga via fibra óptica.</label>
-                        <label><input type="radio" name="q8" value="c"> O uso de cabos especiais para conectar computadores antigos.</label>
+                        <label><input type="radio" name="q8" value="a"> Para guardar dados temporários dos programas que estão abertos no momento.</label>
+                        <label><input type="radio" name="q8" value="b"> Para guardar fotos para sempre, mesmo com o computador desligado.</label>
+                        <label><input type="radio" name="q8" value="c"> Para aumentar a iluminação da tela.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>9. O que é a Inteligência Artificial (IA) no contexto da Ciência da Computação?</h4>
+                    <h4>9. O que é um Sistema Operacional (ex: Windows, Linux, Android)?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q9" value="a"> O desenvolvimento de algoritmos que permitem às máquinas aprender, analisar dados e tomar decisões de forma autônoma.</label>
-                        <label><input type="radio" name="q9" value="b"> A construção de monitores com resolução ultra alta para jogos.</label>
-                        <label><input type="radio" name="q9" value="c"> Um software para limpezas automáticas de discos rígidos.</label>
+                        <label><input type="radio" name="q9" value="a"> O programa principal que gerencia o computador e permite que você use outros aplicativos.</label>
+                        <label><input type="radio" name="q9" value="b"> Um jogo de computador muito popular.</label>
+                        <label><input type="radio" name="q9" value="c"> Um acessório que limpa a sujeira da tela.</label>
                     </div>
                 </div>
 
                 <div class="quiz-question">
-                    <h4>10. Em sistemas de Automação e Mecatrônica, o que significa um "Sistema de Malha Fechada"?</h4>
+                    <h4>10. O que faz um "Bug" no mundo da programação?</h4>
                     <div class="quiz-options">
-                        <label><input type="radio" name="q10" value="a"> Um sistema que utiliza feedback (realimentação) dos sensores para ajustar seu próprio funcionamento de forma contínua.</label>
-                        <label><input type="radio" name="q10" value="b"> Um circuito elétrico desligado que não recebe corrente elétrica.</label>
-                        <label><input type="radio" name="q10" value="c"> Um computador sem acesso à internet para evitar invasões.</label>
+                        <label><input type="radio" name="q10" value="a"> É uma falha ou erro no código que faz o programa funcionar errado.</label>
+                        <label><input type="radio" name="q10" value="b"> É um inseto de verdade que entra no gabinete.</label>
+                        <label><input type="radio" name="q10" value="c"> É uma peça nova que deixa o computador mais rápido.</label>
                     </div>
                 </div>
 
@@ -490,7 +480,7 @@
             let score = 0;
             const totalQuestions = 10;
             const answers = {
-                q1: 'b', q2: 'a', q3: 'a', q4: 'a', q5: 'b',
+                q1: 'a', q2: 'a', q3: 'a', q4: 'a', q5: 'a',
                 q6: 'a', q7: 'a', q8: 'a', q9: 'a', q10: 'a'
             };
 
@@ -517,13 +507,13 @@
 
             if (score >= 9) {
                 resultDiv.style.color = "#34d399";
-                resultDiv.innerText = `🏆 Incrível! Você acertou ${score} de 10! Nível Especialista em Computação e Mecatrônica!`;
+                resultDiv.innerText = `🏆 Incrível! Você acertou ${score} de 10! Excelente conhecimento em Computação!`;
             } else if (score >= 6) {
                 resultDiv.style.color = "#38bdf8";
-                resultDiv.innerText = `🎉 Parabéns! Você acertou ${score} de 10! Você tem um ótimo conhecimento na área.`;
+                resultDiv.innerText = `🎉 Parabéns! Você acertou ${score} de 10! Mandou muito bem.`;
             } else {
                 resultDiv.style.color = "#f59e0b";
-                resultDiv.innerText = `👍 Você acertou ${score} de 10. Dê uma lida no conteúdo da página e tente novamente para melhorar sua nota!`;
+                resultDiv.innerText = `👍 Você acertou ${score} de 10. Releia os cards acima e tente novamente!`;
             }
         }
     </script>
